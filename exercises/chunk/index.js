@@ -8,6 +8,16 @@
 // chunk([1, 2, 3, 4, 5], 4) --> [[ 1, 2, 3, 4], [5]]
 // chunk([1, 2, 3, 4, 5], 10) --> [[ 1, 2, 3, 4, 5]]
 
-function chunk(array, size) {}
+// the idea here is to take slices of the original array and put them
+// in the newly created one based on the size specified as a parameter
+function chunk(array, size) {
+  let chunked = [];
+  let index = 0;
+  while (index < array.length) {
+    chunked.push(array.slice(index, index + size));
+    index += size;
+  }
+  return chunked;
+}
 
 module.exports = chunk;
