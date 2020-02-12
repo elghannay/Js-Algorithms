@@ -12,6 +12,15 @@
 //   4
 //   buzz
 
-function fizzBuzz(n) {}
+function fizzBuzz(n) {
+  for (let index = 1; index <= n; index++) {
+    if (index % 3 === 0)
+      // to determine if a number is a multiple of another we need to use the modulo operator
+      console.log('fizz');
+    else if (index % 5 === 0) console.log('buzz');
+    else if (index % 5 === 0 && n % 3 == 0) console.log('fizzbuzz');
+    else console.log(n);
+  }
+}
 
 module.exports = fizzBuzz;
