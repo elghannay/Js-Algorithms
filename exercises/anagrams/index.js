@@ -9,19 +9,20 @@
 //   anagrams('Hi there', 'Bye there') --> False
 
 function anagrams(stringA, stringB) {
-    let obj = {};
-    let max = 0;
-    let maxChar = '';
-    for (let char of string) {
-      obj[char] = ++obj[char] || 1; // using obj[char]++ is false in the loop you should use ++obj[char]
-    }
-    for (const key in obj) {
-      if (obj[key] > max) {
-        max = obj[key];
-        maxChar = key;
-      }
-    }
-    return maxChar;
+  let objA = {};
+  let objB = {};
+  let max = 0;
+  let maxChar = '';
+  for (let char of stringA) {
+    objA[char] = ++objA[char] || 1; // using obj[char]++ is false in the loop you should use ++obj[char]
+  }
+  for (let char of stringB) {
+    objB[char] = ++objB[char] || 1; // using obj[char]++ is false in the loop you should use ++obj[char]
+  }
+  if (Object.keys(objA).length == Object.keys(objB).length) {
+      
+  } else return false;
+  return maxChar;
 }
 
 module.exports = anagrams;
