@@ -9,20 +9,18 @@
 //   anagrams('Hi there', 'Bye there') --> False
 
 function anagrams(stringA, stringB) {
-  let objA = {};
-  let objB = {};
-  let max = 0;
-  let maxChar = '';
-  for (let char of stringA) {
-    objA[char] = ++objA[char] || 1; // using obj[char]++ is false in the loop you should use ++obj[char]
-  }
-  for (let char of stringB) {
-    objB[char] = ++objB[char] || 1; // using obj[char]++ is false in the loop you should use ++obj[char]
-  }
-  if (Object.keys(objA).length == Object.keys(objB).length) {
-      
-  } else return false;
-  return maxChar;
+  const cleanedStrA = cleanStr(stringA);
+  const cleanedStrB = cleanStr(stringB);
+  if (cleanedStrA !== cleanedStrB) return false;
+  return true;
+}
+function cleanStr(str) {
+  return str
+    .replace(/[^\w]/g, '')
+    .toLowerCase()
+    .split('')
+    .sort()
+    .join('');
 }
 
 module.exports = anagrams;
