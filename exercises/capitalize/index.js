@@ -8,10 +8,11 @@
 //   capitalize('look, it is working!') --> 'Look, It Is Working!'
 
 function capitalize(str) {
-  let strToArray = str.split('');
-  for (const string of strToArray) {
-    string.slice(0).toUpperCase()
-}
+  //convert to an array and use the space as a separator
+  // loop through it '
+  // select the first element of each element on the array and to upperCase
+  str.split(' ');
+  
 }
 
 module.exports = capitalize;

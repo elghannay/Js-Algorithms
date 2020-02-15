@@ -6,7 +6,7 @@
 class Events {
   // Register an event handler
   on(eventName, callback) {}
-
+ // the idea here is to create an event and i dont know yet
   // Trigger all callbacks associated
   // with a given eventName
   trigger(eventName) {}
