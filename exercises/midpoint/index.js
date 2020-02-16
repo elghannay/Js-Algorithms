@@ -13,5 +13,7 @@
 //   midpoint(l); // returns { data: 'b' }
 
 function midpoint(list) {}
-
+// create a function to take the list and add 
+// return the data to it 
+// create a new item from the linked list
 module.exports = midpoint;

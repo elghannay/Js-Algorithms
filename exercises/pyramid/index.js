@@ -14,6 +14,8 @@
 //       ' ### '
 //       '#####'
 
-function pyramid(n) {}
+function pyramid(n) {
+    // create a pyramid use the same concept from 1337
+}
 
 module.exports = pyramid;
