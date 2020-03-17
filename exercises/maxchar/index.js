@@ -6,15 +6,14 @@
 // maxChar("apple 1231111") === "1"
 
 function convertToObjet(str) {
-  let filledObj = str.split('').reduce((object, current) => {
-    if (object[current]) object[current]++;
-    else object[current] = 1;
+  return str.split('').reduce((object, current) => {
+    object[current] = ++object[current] || 1; 
     return object;
   }, {});
 }
 function convertToObjet2(string) {
   let obj = {};
-  for (let char of string) {
+  for (let char of string.replace(/\s/g, '')) {
     // we can apply directly for of on string !!
     if (obj[char]) {
       ++obj[char];
@@ -23,19 +22,19 @@ function convertToObjet2(string) {
 }
 function convertToObjet3(string) {
   let obj = {};
-  let max = 0;
-  let maxChar = '';
-  for (let char of string) {
+  for (let char of string.replace(/\s/g, '')) { // remove the whitespace between the words
     obj[char] = ++obj[char] || 1; // initialization technique
   }
+  return obj;
 }
 
 function maxChar(string) {
   let obj = {};
   let max = 0;
   let maxChar = '';
-  for (let char of string) {
-    obj[char] = ++obj[char] || 1; // using obj[char]++ is false in the loop you should use ++obj[char]
+  for (let char of string.replace(/\s/g, '')) {
+    obj[char] = ++obj[char] || 1; // using obj[char]++ is false in the 
+    //loop you should use ++obj[char]
   }
   for (const key in obj) {
     if (obj[key] > max) {
