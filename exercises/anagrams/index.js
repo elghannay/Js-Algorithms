@@ -8,25 +8,14 @@
 //   anagrams('RAIL! SAFETY!', 'fairy tales') --> True
 //   anagrams('Hi there', 'Bye there') --> False
 // 'use strict';
-function anagrams(stringA, stringB) {
-  const cleanedStrA = cleanStr(stringA);
-  const cleanedStrB = cleanStr(stringB);
-  if (cleanedStrA !== cleanedStrB) return false;
-  return true;
-}
-function cleanStr(str) {
-  return str
-    .replace(/[^\w]/g, '')
-    .toLowerCase()
-    .split('')
-    .sort()
-    .join('');
+
+function anagrams(str1, str2) {
+  cString1 = str1.replace(/[^\w]/g, '').toLowerCase();
+  cString2 = str2.replace(/[^\w]/g, '').toLowerCase();
+  return cString1.split('').sort().join('') === cString2.split('').sort().join('')
 }
 
-// this one goes with it own helper function
-// since in this case we will create a solution
-// based on a object map and then check for each key on the first
-// is it equal the second
+
 function anagrams(stringA, stringB) {
   const aCharMap = objectMap(stringA);
   const bCharMap = objectMap(stringB);
@@ -37,6 +26,7 @@ function anagrams(stringA, stringB) {
   for (let char in aCharMap) {
     if (aCharMap[char] !== bCharMap[char]) return false;
   }
+  return true;
 }
 
 function objectMap(str) {
