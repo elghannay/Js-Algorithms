@@ -15,7 +15,41 @@
 //       '#####'
 
 function pyramid(n) {
-    // create a pyramid use the same concept from 1337
+    for (let row = 1; row <= n; row++) {
+        let stair = '';
+        for (let space = 1; space <= n - row; space++) {
+            stair += ' ';
+        }
+        for (let pound = 1; pound <= 2 * row - 1; pound++) {
+            stair += '#';
+        }
+        for (let space = 1; space <= n - row; space++) {
+            stair += ' ';
+        }
+        console.log(stair);
+    }
 }
 
-module.exports = pyramid;
+function pyramid(n) {
+    let midPoint = Math.floor((2 * n - 1) / 2)
+    for (let row = 0; row < n; row++) {
+        let level = '';
+        for (let columns = 0; columns < 2 * n - 1; columns++) {
+            if (midPoint - row <= columns && midPoint + row >= columns) level += '#';
+            else level += ' ';
+        }
+        console.log(level);
+    }
+}
+pyramid(8);
+function pyramid(n, row = 0, level = '') {
+    const midPoint = Math.floor((2 * n - 1) / 2);
+    if (row == n) return;
+    if (level.length == 2 * n - 1) {
+        console.log(level);
+        return pyramid(n, row + 1);
+    }
+    if (midPoint - row <= level.length && midPoint + row >= level.length) level += '#';
+    else level += ' ';
+    return pyramid(n, row, level)
+}
