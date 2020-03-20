@@ -19,9 +19,8 @@ function vowels(str) {
 function vowels(str) {
     let count = 0;
     let checker = ['a', 'e', 'o', 'u', 'i']
-    for (const char of str.toLowerCase()) {
+    for (const char of str.toLowerCase()) 
         if (checker.includes(char)) count++;
-    }
     return count;
 }
 
@@ -30,4 +29,17 @@ function vowels(string) {
     return matches ? matches.length : 0;
 }
 console.log(vowels('hellO'));
+
+
 module.exports = vowels;
+
+
+function vowels(string) {
+    let counter = 0;
+    const vowels = ['a', 'i', 'o', 'u', 'e'];
+    for (const char of string.toLowerCase()) {
+        for (const vowel of vowels)
+            if (char === vowel) counter++;
+    }
+    return counter;
+}
