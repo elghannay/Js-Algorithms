@@ -7,24 +7,21 @@
 
 function convertToObjet(str) {
   return str.split('').reduce((object, current) => {
-    object[current] = ++object[current] || 1; 
+    object[current] = ++object[current] || 1;
     return object;
   }, {});
 }
 function convertToObjet2(string) {
   let obj = {};
   for (let char of string.replace(/\s/g, '')) {
-    // we can apply directly for of on string !!
-    if (obj[char]) {
-      ++obj[char];
-    } else obj[char] = 1;
+    if (obj[char]) ++obj[char];
+    else obj[char] = 1;
   }
 }
 function convertToObjet3(string) {
   let obj = {};
-  for (let char of string.replace(/\s/g, '')) { // remove the whitespace between the words
-    obj[char] = ++obj[char] || 1; // initialization technique
-  }
+  for (let char of string.replace(/\s/g, '')) 
+    obj[char] = ++obj[char] || 1; 
   return obj;
 }
 

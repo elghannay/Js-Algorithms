@@ -1,11 +1,7 @@
-function reverse(str) {
-  return str
-    .split('')
-    .reverse()
-    .join('');
+function reversal(string) {
+  return string.split('').reverse().join('');
 }
 
-console.log(reverse('hellow there'));
 function reverse(str) {
   let reversed = '';
   for (let character of str) {
@@ -16,14 +12,13 @@ function reverse(str) {
 }
 
 function reverse(str) {
-  return str.split('').reduce(function(acc, current) {
-    acc = current + acc;
-    return acc;
+  return str.split('').reduce(function (acc, current) {
+    return acc = current + acc;
   }, '');
 }
 // ES6 solution
 function reverse(str) {
   return str.split('').reduce((rev, char) => char + rev, '');
 }
-reverse('hello there');
-module.exports = reverse;
+
+console.log(reverse('hellow there'));
