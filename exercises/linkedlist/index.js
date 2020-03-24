@@ -71,23 +71,39 @@ class LinkedList {
         let counter = 0;
         let node = this.head;
         while (node) {
-          if (counter === index) {
-            return node;
-          }
-    
-          counter++;
-          node = node.next;
+            if (counter === index) {
+                return node;
+            }
+            counter++;
+            node = node.next;
         }
         return null;
-      }
+    }
+
+    removeAt(index) {
+        let previous = this.getAt(index - 1);
+        if (!this.head)
+            return;
+        if (index === 0)
+            return this.head = this.head.next;
+        if (!previous || !previous.next)
+            return;
+        previous.next = previous.next.next;
+    }
+    insertAt(data, index) {
+        const previous = this.getAt(index - 1) || this.getLast();
+        if (!this.head)
+            return this.head = new Node(data);
+
+        if (index === 0)
+            return this.head = new Node(data, this.head);
+
+        if (previous) {
+            const node = new Node(data, previous.next);
+            previous.next = node;
+        }
+    }
 }
-// this is how to create a new linked list and associate 
-// a node to it.
-
-/* 
-    const list = new LinkedList();
-    list.head = new Node(15);
-*/
-
+ 
 
 module.exports = { Node, LinkedList };

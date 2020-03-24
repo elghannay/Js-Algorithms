@@ -12,7 +12,15 @@
 //   l.insertLast('c')
 //   midpoint(l); // returns { data: 'b' }
 
-function midpoint(list) {}
+function midpoint(list) {
+    let slow = list.head;
+    let fast = list.head;
+    while (fast.next && fast.next.next) {
+        slow = slow.next;
+        fast = fast.next.next;
+    }
+    return slow;
+}
 // create a function to take the list and add 
 // return the data to it 
 // create a new item from the linked list
