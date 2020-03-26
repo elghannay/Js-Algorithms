@@ -45,6 +45,7 @@ class Tree {
             fn(node); 
         }
     }
+    
 }
 
 module.exports = { Tree, Node };
