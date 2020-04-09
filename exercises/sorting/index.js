@@ -52,4 +52,13 @@ function merge(left, right) {
     return [...result, ...left, ...right];
 }
 
+// sorting in ascending and descending order 
+const numbers = [234, 454, 35, 6667, 776, 43, 22];
+const badSort = numbers.slice().sort();
+// slice allow us to copy an array.
+const ascOrder = numbers.slice().sort((a, b) => a - b);
+const desOrder = numbers.slice().sort((a, b) => b - a);
+
+
 module.exports = { bubbleSort, selectionSort, mergeSort, merge };
+
